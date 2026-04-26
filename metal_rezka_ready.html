@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Нарезка резьбы M16–M70, лазерная и плазменная резка металла | Новое Девяткино</title>
+  <meta name="description" content="Нарезка резьбы на токарном станке M16–M70, лазерная резка металла S0.5–S25 и плазменная резка S1–S40. Принимаем заказы по размерам и чертежам. Новое Девяткино, Ленинградская область.">
+  <meta name="theme-color" content="#f5f3ee">
+  <style>
+    :root {
+      --bg: #f5f3ee;
+      --bg-soft: #fbfaf7;
+      --panel: #ffffff;
+      --panel-2: #f0ebe1;
+      --text: #1e2a39;
+      --muted: #5d6775;
+      --line: rgba(30, 42, 57, 0.12);
+      --accent: #d96d1e;
+      --accent-dark: #b7560e;
+      --accent-soft: #fff1e4;
+      --brand: #24486d;
+      --ok: #2d9966;
+      --shadow: 0 18px 50px rgba(28, 39, 53, 0.10);
+      --radius: 24px;
+      --max: 1220px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(217, 109, 30, 0.10), transparent 22%),
+        radial-gradient(circle at top right, rgba(36, 72, 109, 0.08), transparent 18%),
+        linear-gradient(180deg, #faf8f2 0%, #f5f3ee 55%, #fbfaf7 100%);
+      line-height: 1.58;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 248, 242, 0.86);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand { display: flex; flex-direction: column; gap: 4px; }
+    .brand-top {
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 13px;
+      color: var(--accent);
+    }
+    .brand-sub {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--brand); }
+    .nav-cta {
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--brand);
+      color: #fff !important;
+      box-shadow: var(--shadow);
+    }
+
+    .hero { padding: 52px 0 36px; }
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .hero-main,
+    .hero-side {
+      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.96));
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 4px);
+      box-shadow: var(--shadow);
+    }
+    .hero-main {
+      padding: 42px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      top: -70px;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217,109,30,0.16), rgba(217,109,30,0));
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--ok);
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+    .hero-text {
+      max-width: 700px;
+      font-size: 19px;
+      color: var(--muted);
+      margin: 0 0 28px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 15px 24px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .btn-primary:hover { background: #1a3857; }
+    .btn-secondary {
+      background: #fff;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+    .btn-secondary:hover {
+      background: var(--bg-soft);
+      border-color: rgba(36,72,109,0.22);
+    }
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .meta-card {
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+    }
+    .meta-card strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 8px;
+      color: var(--brand);
+    }
+    .meta-card span {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .hero-side {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      justify-content: center;
+      background: linear-gradient(180deg, #fffaf4 0%, #ffffff 100%);
+    }
+    .side-title {
+      margin: 0 0 6px;
+      font-size: 28px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+    .side-lead {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .quick-list {
+      display: grid;
+      gap: 12px;
+    }
+    .quick-item {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 14px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(36,72,109,0.04);
+      border: 1px solid rgba(36,72,109,0.10);
+    }
+    .quick-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      color: var(--accent-dark);
+      font-weight: 800;
+      font-size: 13px;
+      border: 1px solid rgba(217,109,30,0.14);
+    }
+    .quick-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 16px;
+    }
+    .quick-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .section { padding: 24px 0 10px; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .section-kicker {
+      color: var(--accent-dark);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 54px);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+    .section-note {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .service-card {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+    .service-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--brand);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .service-badge::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--ok);
+    }
+    .service-card h3 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .service-range {
+      margin: 0 0 16px;
+      color: var(--accent-dark);
+      font-weight: 800;
+      font-size: 18px;
+    }
+    .service-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .service-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .service-card li {
+      display: flex;
+      align-items: start;
+      gap: 10px;
+      color: var(--text);
+      font-size: 15px;
+    }
+    .service-card li::before {
+      content: "✓";
+      color: var(--ok);
+      font-weight: 900;
+      margin-top: -1px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .table-card, .contact-card, .steps-card {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .table-card { padding: 10px 0; overflow: hidden; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      padding: 18px 24px;
+      vertical-align: top;
+    }
+    th {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-dark);
+      border-bottom: 1px solid var(--line);
+    }
+    td {
+      font-size: 16px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line);
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    td strong {
+      display: block;
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+
+    .contact-card {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #fffaf4 100%);
+    }
+    .big-phone {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--brand);
+    }
+    .contact-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .contact-actions .btn { flex: 1 1 210px; }
+    .copy-btn {
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      border: 1px solid rgba(217,109,30,0.18);
+    }
+    .copy-btn:hover { background: #ffe7cf; }
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 2px;
+    }
+    .contact-item {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+    }
+    .contact-item strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+    .contact-item span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .advantages {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .adv-card {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .adv-num {
+      display: inline-flex;
+      width: 46px;
+      height: 46px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+    .adv-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+    .adv-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .steps-card {
+      margin-top: 18px;
+      padding: 26px;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .step {
+      padding: 18px;
+      border-radius: 18px;
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+    }
+    .step .num {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(36,72,109,0.14);
+      color: var(--brand);
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .step strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.15;
+    }
+    .step span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .bottom-cta {
+      margin: 26px 0 42px;
+      padding: 32px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(36,72,109,0.95), rgba(30,42,57,0.95));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .bottom-cta-wrap {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+    .bottom-cta h2 {
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .bottom-cta p {
+      margin: 0;
+      color: rgba(255,255,255,0.80);
+      max-width: 760px;
+      font-size: 17px;
+    }
+    .bottom-cta .btn-primary {
+      background: #fff;
+      color: var(--brand);
+      min-width: 230px;
+    }
+    .bottom-cta .btn-primary:hover {
+      background: #edf4fb;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 20px 0 36px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .toast {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 999;
+      background: #21354f;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      transform: translateY(120%);
+      opacity: 0;
+      transition: 0.25s ease;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-wrap,
+      .info-grid,
+      .bottom-cta-wrap {
+        grid-template-columns: 1fr;
+      }
+      .services,
+      .advantages,
+      .steps-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(var(--max), calc(100% - 20px)); }
+      .nav-inner { min-height: 70px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { padding-top: 24px; }
+      .hero-main,
+      .hero-side,
+      .service-card,
+      .contact-card,
+      .steps-card,
+      .adv-card { padding: 22px; }
+      .hero-meta,
+      .services,
+      .advantages,
+      .steps-grid { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-note { margin-top: 12px; }
+      th, td { padding: 16px 16px; }
+      .footer-inner { display: block; }
+      .footer-inner div + div { margin-top: 8px; }
+      .contact-actions .btn { flex-basis: 100%; }
+      .bottom-cta { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-top">Metal Rezka</span>
+        <span class="brand-sub">Резьба, лазерная и плазменная резка металла</span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Услуги</a>
+        <a href="#conditions">Условия</a>
+        <a href="#contact">Контакты</a>
+        <a class="nav-cta" href="#contact">Написать сейчас</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div class="hero-main">
+          <div class="eyebrow">Новое Девяткино · Ленинградская область</div>
+          <h1>Резьба на токарном, лазерная и плазменная резка металла</h1>
+          <p class="hero-text">Принимаем заказы по чертежам, размерам и образцам. Работаем с единичными и серийными заказами. Быстро отвечаем по телефону, в Telegram и Max.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Оставить заявку</a>
+            <a class="btn btn-secondary" href="tel:+79312455485">Позвонить: +7 931 245-54-85</a>
+          </div>
+          <div class="hero-meta">
+            <div class="meta-card">
+              <strong>M16–M70</strong>
+              <span>Нарезка резьбы на токарном станке</span>
+            </div>
+            <div class="meta-card">
+              <strong>S0.5–S25</strong>
+              <span>Лазерная резка листового металла</span>
+            </div>
+            <div class="meta-card">
+              <strong>S1–S40</strong>
+              <span>Плазменная резка деталей и заготовок</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-side">
+          <h2 class="side-title">Что можно заказать</h2>
+          <p class="side-lead">Изготавливаем и режем металл под задачу заказчика без лишних обещаний и пустых блоков. На сайте — только то, что реально предлагается сейчас.</p>
+          <div class="quick-list">
+            <div class="quick-item">
+              <div class="quick-icon">M</div>
+              <div>
+                <strong>Нарезка резьбы M16–M70</strong>
+                <span>Шпильки, заготовки, резьба по заданной длине, работа по размерам и партии.</span>
+              </div>
+            </div>
+            <div class="quick-item">
+              <div class="quick-icon">L</div>
+              <div>
+                <strong>Лазерная резка S0.5–S25</strong>
+                <span>Листовой металл, пластины, детали по файлу или эскизу, аккуратный рез и повторяемость.</span>
+              </div>
+            </div>
+            <div class="quick-item">
+              <div class="quick-icon">P</div>
+              <div>
+                <strong>Плазменная резка S1–S40</strong>
+                <span>Толстый металл, заготовки и детали, когда важны скорость и рабочий диапазон по толщине.</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Услуги</div>
+            <h2>Основные направления работы</h2>
+          </div>
+          <p class="section-note">Одностраничный сайт для прямой заявки: клиент сразу видит диапазоны, понимает что прислать и как быстро выйти на связь.</p>
+        </div>
+
+        <div class="services">
+          <article class="service-card">
+            <div class="service-badge">Токарная обработка</div>
+            <h3>Резьба</h3>
+            <div class="service-range">Диаметр M16–M70</div>
+            <p>Нарезка резьбы на токарном станке по заданной длине резьбовой части и длине заготовки.</p>
+            <ul>
+              <li>Подходит для шпилек, анкеров, заготовок и нестандартных изделий</li>
+              <li>Принимаем единичные, повторяющиеся и серийные заказы</li>
+              <li>Для расчёта нужны диаметр, длина резьбы, длина заготовки и количество</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-badge">Листовой металл</div>
+            <h3>Лазер</h3>
+            <div class="service-range">Толщина S0.5–S25</div>
+            <p>Лазерная резка пластин и деталей по чертежу, эскизу, PDF, DXF или размерному описанию.</p>
+            <ul>
+              <li>Для деталей, пластин, кронштейнов, косынок и других плоских изделий</li>
+              <li>Хорошо подходит там, где важны точность и аккуратная геометрия</li>
+              <li>Для расчёта нужны толщина, материал, файл или размеры и количество</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-badge">Толстый металл</div>
+            <h3>Плазма</h3>
+            <div class="service-range">Толщина S1–S40</div>
+            <p>Плазменная резка металла для деталей и заготовок, когда нужен рабочий диапазон по более толстым листам.</p>
+            <ul>
+              <li>Подходит для пластин, закладных, опорных деталей и заготовок</li>
+              <li>Быстрый расчёт по толщине, размерам детали, материалу и количеству</li>
+              <li>Работаем как по файлу, так и по описанию размеров</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="conditions">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Диапазоны и заявка</div>
+            <h2>Что указать, чтобы быстро получить расчёт</h2>
+          </div>
+          <p class="section-note">Клиенту сразу понятно, какие данные нужны для оценки заказа и с какими диапазонами мы работаем.</p>
+        </div>
+
+        <div class="info-grid">
+          <div class="table-card">
+            <table>
+              <thead>
+                <tr>
+                  <th>Услуга</th>
+                  <th>Диапазон</th>
+                  <th>Что прислать</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Резьба на токарном</strong>Нарезка по заданным размерам</td>
+                  <td>M16–M70</td>
+                  <td>Диаметр, длина резьбы, длина заготовки, количество</td>
+                </tr>
+                <tr>
+                  <td><strong>Лазерная резка</strong>Пластины и детали из листа</td>
+                  <td>S0.5–S25</td>
+                  <td>Толщина, материал, файл или чертёж, количество</td>
+                </tr>
+                <tr>
+                  <td><strong>Плазменная резка</strong>Детали и заготовки из более толстого металла</td>
+                  <td>S1–S40</td>
+                  <td>Толщина, размеры детали, материал, количество</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="contact-card" id="contact">
+            <div class="section-kicker">Контакты</div>
+            <div class="big-phone">+7 931 245-54-85</div>
+            <p>Пишите по этому номеру в Telegram и Max. Если удобнее, сразу звоните. Для расчёта можно отправить размеры, фото, PDF или чертёж.</p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="tel:+79312455485">Позвонить</a>
+              <button class="btn copy-btn" type="button" data-copy="+79312455485">Скопировать номер</button>
+            </div>
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Адрес</strong>
+                <span>2-й проезд, 2 лит. А, д. Новое Девяткино, Всеволожский муниципальный район, Ленинградская область</span>
+              </div>
+              <div class="contact-item">
+                <strong>Как писать</strong>
+                <span>Telegram и Max — по номеру +7 931 245-54-85. Для первого сообщения достаточно отправить размеры, фото детали или файл.</span>
+              </div>
+              <div class="contact-item">
+                <strong>Что прислать сразу</strong>
+                <span>Материал, толщину или диаметр, количество, размеры, срок и любой чертёж или фото, если он есть.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="advantages">
+          <div class="adv-card">
+            <div class="adv-num">01</div>
+            <h3>Единичные и серийные заказы</h3>
+            <p>Можно обратиться как за одной деталью, так и за повторяющейся партией. Это важно для реальной загрузки, а не для декоративного текста на сайте.</p>
+          </div>
+          <div class="adv-card">
+            <div class="adv-num">02</div>
+            <h3>Расчёт по чертежу или размерам</h3>
+            <p>Если есть DXF, PDF, эскиз или просто размеры, этого уже достаточно, чтобы начать расчёт и согласование.</p>
+          </div>
+          <div class="adv-card">
+            <div class="adv-num">03</div>
+            <h3>Понятные диапазоны</h3>
+            <p>На сайте сразу указано, в каком диапазоне реально выполняются резьба, лазерная и плазменная резка. Это уменьшает пустые обращения.</p>
+          </div>
+          <div class="adv-card">
+            <div class="adv-num">04</div>
+            <h3>Быстрый контакт без сложной формы</h3>
+            <p>Вместо неработающих форм — прямой номер для звонка, Telegram и Max. Для одностраничного сайта это сейчас сильнее и честнее.</p>
+          </div>
+        </div>
+
+        <div class="steps-card">
+          <div class="section-kicker">Как проходит работа</div>
+          <div class="steps-grid">
+            <div class="step">
+              <div class="num">Шаг 1</div>
+              <strong>Вы отправляете размеры или чертёж</strong>
+              <span>Можно прислать PDF, DXF, фото образца, схему от руки или просто список размеров.</span>
+            </div>
+            <div class="step">
+              <div class="num">Шаг 2</div>
+              <strong>Мы уточняем детали заказа</strong>
+              <span>Согласовываем материал, диапазон работ, количество и то, что нужно именно под вашу задачу.</span>
+            </div>
+            <div class="step">
+              <div class="num">Шаг 3</div>
+              <strong>Подтверждаем заказ и запускаем в работу</strong>
+              <span>После согласования переходите к выполнению заказа без лишних переписок и бюрократии.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="bottom-cta">
+          <div class="bottom-cta-wrap">
+            <div>
+              <div class="section-kicker" style="color:#ffd6b0; margin-bottom:10px;">Заявка</div>
+              <h2>Нужна резьба, лазерная или плазменная резка?</h2>
+              <p>Отправьте размеры, чертёж или фото детали на номер <strong>+7 931 245-54-85</strong> в Telegram, Max или позвоните напрямую. Для старта не нужен сложный бриф — достаточно понятных исходных данных.</p>
+            </div>
+            <a class="btn btn-primary" href="tel:+79312455485">Связаться сейчас</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>Metal Rezka · одностраничный сайт услуг по резьбе и резке металла</div>
+      <div>Телефон / Telegram / Max: +7 931 245-54-85</div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">Номер скопирован. Вставьте его в Telegram или Max.</div>
+
+  <script>
+    const toast = document.getElementById('toast');
+    document.querySelectorAll('[data-copy]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const value = btn.getAttribute('data-copy');
+        try {
+          await navigator.clipboard.writeText(value);
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 2400);
+        } catch (e) {
+          alert('Скопируйте номер вручную: ' + value);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
